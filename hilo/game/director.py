@@ -55,14 +55,14 @@ class Director:
         Args:
             self (Director): An instance of Director.
         """
-        print(f"The card is:{}")
+        print(f"The card is:{self.dealer.get_card}")
 
         print(f"Higher or lower? {self.")
 
-        print(f"\nYou rolled: {self.dealer.card}")
+        print(f"\nYou rolled: {self.dealer.card_num}")
         print(f"")
 
-        print(f"Your score is: {self.your_score}")
+        print(f"Your score is: {self.score}")
         if self.dealer.can_deal():
             choice = input("Keep Playing? [y/n] ")
             self.keep_playing = (choice == "y")
