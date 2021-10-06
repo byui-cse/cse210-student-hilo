@@ -36,4 +36,14 @@ root                    (project root folder)
 ## Authors
 ---
 * TODO: Add your names and emails here
+
 Alex Proksch  alexjproksch@gmail.com
+
+
+
+Nathan Muller - nmuller005@gmail.com
+
+
+Scott Thompson: scottathompson98@gmail.com
+
+
