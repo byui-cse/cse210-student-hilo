@@ -38,4 +38,4 @@ root                    (project root folder)
 * TODO: Add your names and emails here
 
 
-Scott Thompson: scottathompson98@gmail.com
+gilles Mambou - gillesravelmambou@gmail.com
