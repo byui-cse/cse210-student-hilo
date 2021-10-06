@@ -62,7 +62,7 @@ class Director:
         print(f"\nYou rolled: {self.dealer.card_num}")
         print(f"")
 
-        print(f"Your score is: {self.your_score}")
+        print(f"Your score is: {self.score}")
         if self.dealer.can_deal():
             choice = input("Keep Playing? [y/n] ")
             self.keep_playing = (choice == "y")
