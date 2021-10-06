@@ -7,8 +7,8 @@ class Director:
     
     Attributes:
         keep_playing (boolean): Whether or not the player wants to keep playing.
-        score (number): The total number of points earned.
-        thrower (Thrower): An instance of the class of objects known as Thrower.
+        score (nber): The total number of points earned.
+        dealer (Dealer): An instance of the class of objects known as Dealer.
     """
 
     def __init__(self):
@@ -19,7 +19,7 @@ class Director:
         """
         self.keep_playing = True
         self.score = 0
-        self.thrower = Thrower()
+        self.dealer = Dealer()
 
     def start_game(self):
         """Starts the game loop to control the sequence of play.
@@ -34,11 +34,11 @@ class Director:
 
     def get_inputs(self):
         """Gets the inputs at the beginning of each round of play. In this case,
-        that means throwing the dice.
+        that means throwing the card.
         Args:
             self (Director): An instance of Director.
         """
-        self.thrower.throw_dice()
+        self.dealer.deal_card()
         
     def do_updates(self):
         """Updates the important game information for each round of play. In 
@@ -46,19 +46,25 @@ class Director:
         Args:
             self (Director): An instance of Director.
         """
-        points = self.thrower.get_points()
+        points = self.dealer.get_points()
         self.score += points
         
     def do_outputs(self):
         """Outputs the important game information for each round of play. In 
-        this case, that means the dice that were rolled and the score.
+        this case, that means the card that were rolled and the score.
         Args:
             self (Director): An instance of Director.
         """
-        print(f"\nYou rolled: {self.thrower.dice}")
-        print(f"Your score is: {self.score}")
-        if self.thrower.can_throw():
-            choice = input("Roll again? [y/n] ")
+        print(f"The card is:{}")
+
+        print(f"Higher or lower? {self.")
+
+        print(f"\nYou rolled: {self.dealer.card}")
+        print(f"")
+
+        print(f"Your score is: {self.your_score}")
+        if self.dealer.can_deal():
+            choice = input("Keep Playing? [y/n] ")
             self.keep_playing = (choice == "y")
         else:
             self.keep_playing = False
