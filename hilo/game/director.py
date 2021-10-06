@@ -7,7 +7,7 @@ class Director:
     
     Attributes:
         keep_playing (boolean): Whether or not the player wants to keep playing.
-        score (nber): The total number of points earned.
+        score (number): The total number of points earned.
         dealer (Dealer): An instance of the class of objects known as Dealer.
     """
 
@@ -34,7 +34,7 @@ class Director:
 
     def get_inputs(self):
         """Gets the inputs at the beginning of each round of play. In this case,
-        that means throwing the card.
+        that means dealing the card.
         Args:
             self (Director): An instance of Director.
         """
@@ -55,11 +55,11 @@ class Director:
         Args:
             self (Director): An instance of Director.
         """
-        print(f"The card is:{}")
+        print(f"The card is:{self.dealer.card_num}")
 
-        print(f"Higher or lower? {self.")
+        print(f"Higher or lower? [h/l] {self.dealer.user_choice") # user_choice needs to be made in dealer.py
 
-        print(f"\nYou rolled: {self.dealer.card}")
+        print(f"\nYou rolled: {self.dealer.card_num}")
         print(f"")
 
         print(f"Your score is: {self.your_score}")
