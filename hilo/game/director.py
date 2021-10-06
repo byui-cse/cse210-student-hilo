@@ -4,7 +4,11 @@ from game.style import *
 
 
 class Director:
+    """
+    The Director class handles the game play for High Low.
+    """
     def __init__(self):
+        """Initializes the Dealer, Player, keep_playing bool, points, and round_number"""
         self.dealer = Dealer()
         self.player = Player()
         self.keep_playing = True
@@ -18,6 +22,7 @@ class Director:
             self (Director): an instance of Director.
         """
         print_green("Welcome to HIGH LOW!")
+        # Outputs instructions.
         print_yellow("""
 Instructions:
     You start with 300 points. 
@@ -30,6 +35,7 @@ Instructions:
             self.get_inputs()
             self.do_updates()
             self.do_outputs()
+        # Game ending output
         print_green("Thank you for playing!")
         print_yellow(f"Your points were {self.points}")
         if self.points <= 0:
@@ -59,6 +65,10 @@ Instructions:
         self.points = sum([self.points, round_points])
 
     def get_play_another_round(self):
+        """Gets validated user input for if they want to play another round.
+        Args:
+            self (Director): An instance of Director.
+        """
         answer = input("Play Another Round? [Y/N]: ")
         if answer not in ["y", "Y", "n", "N"]:
             print_red("Please Choose Y/N!")
