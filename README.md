@@ -35,4 +35,4 @@ root                    (project root folder)
 
 ## Authors
 ---
-* TODO: Add your names and emails here
+Gilles Mambou - gillesravelmambou@gmail.com
