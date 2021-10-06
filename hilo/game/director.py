@@ -57,7 +57,7 @@ class Director:
         """
         print(f"The card is:{self.dealer.card_num}")
 
-        print(f"Higher or lower? [h/l] {self.dealer.user_choice") # user_choice needs to be made in dealer.py
+        print(f"Higher or lower? [h/l] {self.dealer.user_choice}") # user_choice needs to be made in dealer.py
 
         print(f"\nYou rolled: {self.dealer.card_num}")
         print(f"")
