@@ -37,4 +37,9 @@ root                    (project root folder)
 ---
 * TODO: Add your names and emails here
 
+
 Nathan Muller - nmuller005@gmail.com
+
+
+Scott Thompson: scottathompson98@gmail.com
+
