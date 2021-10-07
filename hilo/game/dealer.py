@@ -16,6 +16,9 @@ class Dealer():
         Keeps track of the number of points.
         """
         self.points = 0
+        print(self.card_active)
+        print(self.card_next)
+
         
         print(f'choice = {self.choice}, active = {self.card_active}, next = {self.card_next}\n')
 
