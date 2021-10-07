@@ -39,3 +39,4 @@ root                    (project root folder)
 
 Ryder Garache      gryderjose@gmail.com
 Pierre Phil Bangay pierrephild@gmail.com
+Alirio Mieres      mie21001@byui.edu
