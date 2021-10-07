@@ -36,3 +36,6 @@ root                    (project root folder)
 ## Authors
 ---
 * TODO: Add your names and emails here
+
+Ryder Garache      gryderjose@gmail.com
+Alirio Mieres      mie21001@byui.edu
