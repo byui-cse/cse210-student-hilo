@@ -36,3 +36,4 @@ root                    (project root folder)
 ## Authors
 ---
 * TODO: Add your names and emails here
+1.- Isaac Cruz ----- cru21010@byui.edu
