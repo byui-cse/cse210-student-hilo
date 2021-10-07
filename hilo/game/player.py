@@ -17,4 +17,8 @@ class Player:
             #Checks to see if user inputed a valid response.
             if response.lower == "high" or response.lower == "low" or response.lower == "h" or response.lower == "l":
                 valid_response = True
-        return response
+                if response.lower == "high":
+                    response = "h"
+                if response.lower == "low":
+                    response = "l"
+        return response.lower
