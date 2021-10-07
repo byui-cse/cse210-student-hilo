@@ -81,7 +81,7 @@ class Dealer:
             print(f"Game over you lose and are bad at this game!")
 
         else:
-            self.player.contituation()
+            self.player.continuation()
         if self.player.again == "n":
             print(f"Final score is {self.score}")
             self.keep_playing = False
