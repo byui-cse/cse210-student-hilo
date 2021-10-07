@@ -5,9 +5,9 @@ class Player:
         self.again = 0
 
     def user_guess(self):
-        self.guess = input("higher or lower? [H/L]: ").lower()
+        self.guess = input("Higher or Lower? [H/L]: ").lower()
 
     def contituation(self):
-        self.again = input("another round? [Y/N]: ").lower()
+        self.again = input("Another round? [Y/N]: ").lower()
 
 

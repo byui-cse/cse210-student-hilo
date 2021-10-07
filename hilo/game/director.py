@@ -23,7 +23,7 @@ class Dealer:
         """
         while self.keep_playing:
             self.cardsobtain()
-            print(f"the first card is: {self.card_name(self.card1)}")
+            print(f"The first card is: {self.card_name(self.card1)}")
             self.compare_guess()
             self.display_points()
             self.can_play_again()
@@ -83,5 +83,5 @@ class Dealer:
         else:
             self.player.contituation()
         if self.player.again == "n":
-            print(f"final score is {self.score}")
+            print(f"Final score is {self.score}")
             self.keep_playing = False
