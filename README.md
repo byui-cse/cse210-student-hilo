@@ -35,4 +35,5 @@ root                    (project root folder)
 
 ## Authors
 ---
+Seth Wilding - sethwilding@byui.edu
 * TODO: Add your names and emails here
