@@ -61,7 +61,7 @@ class Dealer:
             return(str(card))
         elif(card == 11):
             return("J")
-        elif(card == 11):
+        elif(card == 12):
             return("Q")
         elif(card == 13):
             return("K")
