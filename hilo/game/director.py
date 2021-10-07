@@ -31,7 +31,7 @@ class Dealer:
     
     def cardsobtain(self):
         """Gets the inputs at the beginning of each round of play. In this case,
-        that means throwing the dice.
+        that means flipping the first two cards.
 
         Args:
             self (Director): An instance of Director.
@@ -53,12 +53,20 @@ class Dealer:
         print(f"Next card was: {self.card_name(self.card2)}")
         if (self.card1 > self.card2 and self.player.guess == "l") or (self.card1 < self.card2 and self.player.guess == "h"):
             self.score += 100
+            print("You guessed wisely and earned 100 points")
         else:
             self.score += -75
+            print("You guessed poorly and lost 75 points")
 
     def card_name(self, card):
-        if (card < 11):
+
+        """
+        Converts 11,12,13,1 to J,Q,K,A
+        """
+        if (card < 11 and card != 1):
             return(str(card))
+        elif(card == 1):
+            return("A")
         elif(card == 11):
             return("J")
         elif(card == 12):
@@ -69,6 +77,7 @@ class Dealer:
             
     def display_points(self):
         print(f"Score: {self.score}")
+        print ()
 
     def can_play_again(self):
         """Outputs the important game information for each round of play. In 
@@ -83,5 +92,5 @@ class Dealer:
         else:
             self.player.continuation()
         if self.player.again == "n":
-            print(f"Final score is {self.score}")
+            print(f"Thanks for playing! Your final score is: {self.score}")
             self.keep_playing = False

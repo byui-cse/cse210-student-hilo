@@ -8,7 +8,7 @@ class Player:
         self.guess = input("Higher or Lower? [H/L]: ").lower()
 
     def continuation(self):
-        self.again = input("Another round? [Y/N]: ").lower()
+        self.again = input("Would you like to play another round? [Y/N]: ").lower()
 
 
 
