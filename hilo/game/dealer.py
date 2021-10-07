@@ -16,19 +16,14 @@ class Dealer():
         '''
         Draws a two random cards
         '''
-        deck = self.deck.copy
+        deck = self.deck.copy()
+        deck_size = len(deck)
 
-        rand_card = random.randint(0,len(deck))
-
-        first_card = deck.pop[rand_card]
-        second_card = deck.pop[rand_card]
-
-        print( deck )
-        print( first_card )
-        print( second_card )
-        print( deck )
+        rand_card = random.randint(0,deck_size)
+        first_card = deck.pop(rand_card)
+        
+        deck_size = len(deck)
+        rand_card = random.randint(0,deck_size)
+        second_card = deck.pop(rand_card)
 
         return first_card, second_card
-
-dealer = Dealer()
-dealer.dealer_card()
