@@ -21,6 +21,15 @@ class Director:
         self.score = 300
         self.dealer = Dealer()
 
+    def can_play_again(self):
+            """
+            Checks to see if the player can play again.
+            """
+            if self.score <= 0:
+                return False
+            else:
+                return True
+
     def start_game(self):
         """Starts the game loop to control the sequence of play.
         
@@ -62,7 +71,7 @@ class Director:
         print(f"")
 
         print(f"Your score is: {self.score}")
-        if self.dealer.can_play_again():
+        if self.can_play_again():
             choice = input("Keep Playing? [y/n] ")
             self.keep_playing = (choice == "y")
         else:
