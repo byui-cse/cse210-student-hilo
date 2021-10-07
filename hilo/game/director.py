@@ -38,7 +38,7 @@ class Director:
         Args:
             self (Director): An instance of Director.
         """
-        self.dealer.deal_card()
+        self.dealer.get_card()
         
     def do_updates(self):
         """Updates the important game information for each round of play. In 
@@ -57,13 +57,13 @@ class Director:
         """
         print(f"The card is:{self.dealer.card_num}")
 
-        print(f"Higher or lower? [h/l] {self.dealer.user_choice}") # user_choice needs to be made in dealer.py
+        print(f"Higher or lower? [h/l] {self.dealer.choice}") # user_choice needs to be made in dealer.py
 
         print(f"\nYou rolled: {self.dealer.card_num}")
         print(f"")
 
         print(f"Your score is: {self.score}")
-        if self.dealer.can_deal():
+        if self.dealer.can_play_again():
             choice = input("Keep Playing? [y/n] ")
             self.keep_playing = (choice == "y")
         else:
