@@ -22,7 +22,7 @@ class Director:
         """
         self.keep_playing = True
         self.score = 0
-        self.thrower = Thrower()
+        self.player = Player()
 
     def start_game(self):
         """Starts the game loop to control the sequence of play.
@@ -55,9 +55,9 @@ class Director:
         self.score += points
         
     def do_outputs(self):
-        print(f"\nYou throwed the card : {self.Player.card}")
+        print(f"\nYou throwed the card : {self.player.card}")
         print(f"Your score is: {self.score}")
-        if self.Player.can_throw():
+        if self.player.can_throw():
             choice = input("Play again? [y/n] ")
             self.keep_playing = (choice == "y")
         else:
