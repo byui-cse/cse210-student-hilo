@@ -66,7 +66,7 @@ class Director:
         print(f"The card is:{self.dealer.card_active}")
 
         self.dealer.choice = input(f"Higher or lower? [h/l] ") # user_choice needs to be made in dealer.py
-
+        
         print(f"\nNext card was: {self.dealer.card_next}")
         print(f"")
 

@@ -16,6 +16,11 @@ class Dealer():
         Keeps track of the number of points.
         """
         self.points = 0
+        
+        print(self.choice)
+        print(self.card_active)
+        print(self.card_next)
+
         if self.card_active > self.card_next and self.choice.lower() == "l":
             self.points -= 75
         elif self.card_active < self.card_next and self.choice.lower() == "h":
