@@ -55,16 +55,10 @@ class Director:
         self.score += points
         
     def do_outputs(self):
-        """Outputs the important game information for each round of play. In 
-        this case, that means the dice that were rolled and the score.
-
-        Args:
-            self (Director): An instance of Director.
-        """
-        print(f"\nYou rolled: {self.thrower.dice}")
+        print(f"\nYou throwed the card : {self.Player.card}")
         print(f"Your score is: {self.score}")
-        if self.thrower.can_throw():
-            choice = input("Roll again? [y/n] ")
+        if self.Player.can_throw():
+            choice = input("Play again? [y/n] ")
             self.keep_playing = (choice == "y")
         else:
             self.keep_playing = False
