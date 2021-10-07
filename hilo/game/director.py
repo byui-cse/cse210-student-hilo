@@ -38,7 +38,7 @@ class Director:
         """
         while self.keep_playing:
             self.get_inputs()
-            self.do_updates()
+            # self.do_updates()
             self.do_outputs()
 
     def get_inputs(self):
@@ -69,6 +69,8 @@ class Director:
         
         print(f"\nNext card was: {self.dealer.card_next}")
         print(f"")
+        
+        self.do_updates() # moved do_updates so it will update points 
 
         print(f"Your score is: {self.score}")
         if self.can_play_again():

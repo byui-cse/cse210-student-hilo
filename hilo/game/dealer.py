@@ -17,17 +17,15 @@ class Dealer():
         """
         self.points = 0
         
-        print(self.choice)
-        print(self.card_active)
-        print(self.card_next)
+        print(f'choice = {self.choice}, active = {self.card_active}, next = {self.card_next}\n')
 
-        if self.card_active > self.card_next and self.choice.lower() == "l":
+        if self.card_active < self.card_next and self.choice.lower() == "l": # sign was >
             self.points -= 75
-        elif self.card_active < self.card_next and self.choice.lower() == "h":
+        elif self.card_active > self.card_next and self.choice.lower() == "h": # sign was <
             self.points -= 75
-        elif self.card_active < self.card_next and self.choice.lower() == "l":
+        elif self.card_active > self.card_next and self.choice.lower() == "l": # sign was <
             self.points += 100
-        elif self.card_active > self.card_next and self.choice.lower() == "l":
+        elif self.card_active < self.card_next and self.choice.lower() == "h": # sign was >
             self.points += 100
         else:
             self.points += 0
