@@ -35,4 +35,10 @@ root                    (project root folder)
 
 ## Authors
 ---
-* TODO: Add your names and emails here
+
+Ryder Garache      gryderjose@gmail.com
+Jeremy Diamond     socjeremyd@gmail.com
+Andrew Finlayson   afinlayson82@gmail.com
+Pierre Phil Bangay pierrephild@gmail.com
+Alirio Mieres      mie21001@byui.edu
+
