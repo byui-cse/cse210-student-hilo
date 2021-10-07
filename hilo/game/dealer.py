@@ -18,6 +18,12 @@ class Dealer():
         self.points = 0
         print(self.card_active)
         print(self.card_next)
+
+        
+        print(self.choice)
+        print(self.card_active)
+        print(self.card_next)
+
         if self.card_active > self.card_next and self.choice.lower() == "l":
             self.points -= 75
         elif self.card_active < self.card_next and self.choice.lower() == "h":
