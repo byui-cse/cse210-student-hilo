@@ -39,3 +39,4 @@ root                    (project root folder)
 
 Ryder Garache      gryderjose@gmail.com
 Jeremy Diamond     socjeremyd@gmail.com
+Andrew Finlayson   afinlayson82@gmail.com
