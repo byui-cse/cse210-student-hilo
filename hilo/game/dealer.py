@@ -14,7 +14,17 @@ class Dealer():
         """
         Keeps track of the number of points.
         """
-        
+        if self.card_active > self.card_next and self.choice.lower() == "l":
+            self.points += 100
+        elif self.card_active < self.card_next and self.choice.lower() == "h":
+            self.points += 100 
+        elif self.card_active < self.card_next and self.choice.lower() == "l":
+            self.points -= 75
+        elif self.card_active > self.card_next and self.choice.lower() == "l":
+            self.points -= 75
+        else:
+            self.points += 0
+        return self.points
     def can_play_again(self):
         """
         Checks to see if the player can play again.
