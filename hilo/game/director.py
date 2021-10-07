@@ -48,7 +48,7 @@ class Dealer:
         Args:
             self (Director): An instance of Director.
         """
-
+        print()
         self.player.user_guess()
         print(f"Next card was: {self.card_name(self.card2)}")
         if (self.card1 > self.card2 and self.player.guess == "l") or (self.card1 < self.card2 and self.player.guess == "h"):
