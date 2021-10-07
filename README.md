@@ -35,4 +35,5 @@ root                    (project root folder)
 
 ## Authors
 ---
+Ronaldo Schmidt - ronaldomschmidt@gmail.com
 * TODO: Add your names and emails here
