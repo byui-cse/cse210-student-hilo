@@ -56,6 +56,7 @@ class Player:
         """Clears the card list.
         Args:
             Self(Player): An instance of Player."""
+        self.cards.pop(0)
 
         
         
