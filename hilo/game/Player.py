@@ -4,7 +4,7 @@ The game package contains the classes for playing Hilo.
 import random
 
 # TODO: Define the Thrower class here.
-class Thrower:
+class Player:
     """A code template for the player that will throw the decide and
     keep track of the points gained during each throw. Will also decide
     if they want to keep playing or not, assuming they can according to
@@ -38,19 +38,19 @@ class Thrower:
         else:
             return False
     
+
     def get_points(self):
-        """Calculates the number of points for each throw. Returns an integer.
+        """Calculates the number of points for each turn. Returns an integer.
         Args:
             Self(Thrower): An instance of Thrower."""
-
-        score = 0
-
-        for number in self.dice:
-            if number == 1:
-                score += 100
-            elif number == 5:
-                score +=50
+        if self.get_guess == 'h':
+            if self.get_guess > self.get_card:
+                return 100
             else:
-                score +=0
-        return score
-
+                return (-75)
+        
+        if self.get_guess == 'l':
+            if self.get_guess < self.get_card:
+                return 100
+            else:
+                return (-75) 
