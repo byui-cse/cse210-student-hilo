@@ -18,7 +18,7 @@ class Director:
             self (Director): an instance of Director.
         """
         self.keep_playing = True
-        self.score = 0
+        self.score = 300
         self.dealer = Dealer()
 
     def start_game(self):
@@ -39,7 +39,6 @@ class Director:
             self (Director): An instance of Director.
         """
         self.dealer.get_card()
-        
     def do_updates(self):
         """Updates the important game information for each round of play. In 
         this case, that means updating the score.
@@ -57,9 +56,9 @@ class Director:
         """
         print(f"The card is:{self.dealer.card_active}")
 
-        print(f"Higher or lower? [h/l] {self.dealer.choice}") # user_choice needs to be made in dealer.py
+        self.dealer.choice = input(f"Higher or lower? [h/l] ") # user_choice needs to be made in dealer.py
 
-        print(f"\nYou rolled: {self.dealer.card_next}")
+        print(f"\nNext card was: {self.dealer.card_next}")
         print(f"")
 
         print(f"Your score is: {self.score}")
