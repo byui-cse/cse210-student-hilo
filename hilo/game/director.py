@@ -63,6 +63,7 @@ class Director:
         Args:
             self (Director): An instance of Director.
         """
+        
         print(f"The card is:{self.dealer.card_active}")
 
         self.dealer.choice = input(f"Higher or lower? [h/l] ") # user_choice needs to be made in dealer.py

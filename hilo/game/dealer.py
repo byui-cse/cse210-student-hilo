@@ -24,14 +24,19 @@ class Dealer():
 
         if self.card_active < self.card_next and self.choice.lower() == "l": # sign was >
             self.points -= 75
+            print("You were incorrect!")
         elif self.card_active > self.card_next and self.choice.lower() == "h": # sign was <
             self.points -= 75
+            print("You were incorrect!")
         elif self.card_active > self.card_next and self.choice.lower() == "l": # sign was <
             self.points += 100
+            print("You were correct!")
         elif self.card_active < self.card_next and self.choice.lower() == "h": # sign was >
             self.points += 100
+            print("You were correct!")
         else:
             self.points += 0
+            print("The cards were the same.")
         return self.points
 
     def get_card(self):
