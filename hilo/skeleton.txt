@@ -1,0 +1,30 @@
+director
+    
+    start game
+        drawer.draw_card #for initial card to guess higher or lower
+        print initial card value
+        while keep playing
+            
+            get inputs
+                drawer.get_guess #store guess as attribute
+                drawer.draw_card
+                    previous_card = current_card
+                    current_card = random.randint()
+            
+            do uptates
+                points = self.drawer.get_points
+                    if self.guess.upper() == "H"
+                        if
+                        elif
+                    if self.guess.upper() == "L" 
+                        if
+                        elif
+            
+            do outputs
+                print (You drew the card)
+                print (score)
+                if score != 0
+                    choice = input(draw again?)
+                    self.keep_playing = (choice =="y")
+                else:
+                    self.keep_playing = false
