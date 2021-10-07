@@ -36,3 +36,4 @@ root                    (project root folder)
 ## Authors
 ---
 * TODO: Add your names and emails here
+Jennifer Clark  Jennifer.c.schultz@gmail.com
