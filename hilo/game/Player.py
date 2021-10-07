@@ -54,3 +54,5 @@ class Thrower:
                 score +=0
         return score
 
+    def get_guess(self):
+        self.guess = input ("Higher or Lower? (H/L)")
