@@ -1,11 +1,19 @@
-from game.dealer import Dealer
+from game.dealer import Player
+import random
 
-class Director:
-
-    def __init__(self) -> None:
-        self.score = 300
+class Dealer:
+    def __init__(self):
+        """The class constructor.
+        
+        Args:
+            self (Director): an instance of Director.
+        """
         self.keep_playing = True
-        self.dealer = Dealer()
+        self.score = 300
+        self.player = Player()
+        self.card1 = 0
+        self.card2 = 0
+        
 
     def start_game(self):
         """Starts the game loop to control the sequence of play.
@@ -14,48 +22,66 @@ class Director:
             self (Director): an instance of Director.
         """
         while self.keep_playing:
-            self.get_inputs()
-            self.do_updates()
-            self.do_outputs()
-
-    def get_inputs(self):
+            self.cardsobtain()
+            print(f"the first card is: {self.card_name(self.card1)}")
+            self.compare_guess()
+            self.display_points()
+            self.can_play_again()
+    
+    
+    def cardsobtain(self):
         """Gets the inputs at the beginning of each round of play. In this case,
-        that means flipping the next card.
+        that means throwing the dice.
 
         Args:
             self (Director): An instance of Director.
         """
-        self.dealer.flip_card()
-
-    def do_updates(self):
+        self.card1 = random.randint(1, 13)
+        self.card2 = random.randint(1, 13)
+        while self.card1 == self.card2:
+            self.card2 = random.randint(1, 13)
+   
+    def compare_guess(self):
         """Updates the important game information for each round of play. In 
         this case, that means updating the score.
 
         Args:
             self (Director): An instance of Director.
         """
-        points = self.dealer.score_round()
-        self.score += points
 
+        self.player.user_guess()
+        print(f"Next card was: {self.card_name(self.card2)}")
+        if (self.card1 > self.card2 and self.player.guess == "l") or (self.card1 < self.card2 and self.player.guess == "h"):
+            self.score += 100
+        else:
+            self.score += -75
 
-    def can_flip():
-        pass
+    def card_name(self, card):
+        if (card < 11):
+            return(str(card))
+        elif(card == 11):
+            return("J")
+        elif(card == 11):
+            return("Q")
+        elif(card == 13):
+            return("K")
+                
+            
+    def display_points(self):
+        print(f"Score: {self.score}")
 
-    def do_outputs(self):
+    def can_play_again(self):
         """Outputs the important game information for each round of play. In 
-        this case, that means a card was flipped and show the card and current score.
-
+        this case, that means the final score of the game
         Args:
             self (Director): An instance of Director.
         """
-        
-        print(f"\nThe card is: {self.dealer.card}")
-        print(f"Your score is: {self.score}")
+        if self.score <= 0:
+            self.keep_playing = False
+            print(f"Game over you lose and are bad at this game!")
 
-        if self.thrower.can_throw():
-            choice = input("Roll again? [y/n] ")
-            self.keep_playing = (choice == "y")
         else:
-            if self.score == 0:
-                print("Better Luck Next Time!")
+            self.player.contituation()
+        if self.player.again == "n":
+            print(f"final score is {self.score}")
             self.keep_playing = False
