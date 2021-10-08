@@ -36,17 +36,17 @@ class Player:
         return guess
     
 
-    def get_points(self):
+    def get_points(self, guess):
         """Calculates the number of points for each turn. Returns an integer.
         Args:
             Self(Player): An instance of Player."""
-        if self.get_guess.lower() == 'h':
+        if guess.lower() == 'h':
             if self.cards[1] > self.cards[0]:
                 return 100
             else:
                 return (-75)
         
-        if self.get_guess.lower() == 'l':
+        if guess.lower() == 'l':
             if self.cards[1] < self.cards[0]:
                 return 100
             else:
@@ -58,5 +58,6 @@ class Player:
             Self(Player): An instance of Player."""
         self.cards.pop(0)
 
-        
+
+#hola
         
