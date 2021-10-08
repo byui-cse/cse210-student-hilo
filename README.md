@@ -35,6 +35,6 @@ root                    (project root folder)
 
 ## Authors
 ---
-* TODO: Add your names and emails here
-Kyle Southwick 
-sou19009@byui.edu
+*
+Name: Kyle Southwick 
+Email: sou19009@byui.edu
