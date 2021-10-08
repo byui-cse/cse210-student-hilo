@@ -35,6 +35,7 @@ root                    (project root folder)
 
 ## Authors
 ---
-*
-Name: Kyle Southwick 
-Email: sou19009@byui.edu
+* TODO: Add your names and emails here
+1.- Isaac Cruz ----- cru21010@byui.edu
+2.- William Seaver --- Sea16016@byui.edu
+3.- Kyle Southwick --- sou19009@byui.edu
