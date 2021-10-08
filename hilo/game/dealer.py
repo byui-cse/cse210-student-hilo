@@ -17,6 +17,8 @@ class Dealer:
             self (Dealer): An instance of Dealer.
         """
         self.num_draws = 0
+        self.new_card = 0
+        self.current_card = 0
     
     def get_points(self):
         """Gets the total number of points earned from a draw.
