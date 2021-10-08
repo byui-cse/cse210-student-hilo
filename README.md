@@ -36,4 +36,5 @@ root                    (project root folder)
 ## Authors
 ---
 * TODO: Add your names and emails here
-* Julio Rubio   ?????@gmail.com
+* Julio Rubio   | rubmesc@gmail.com
+* Grant Boreham | bor21004@byui.edu
