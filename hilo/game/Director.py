@@ -1,7 +1,7 @@
 """
 The game package contains the classes for playing Hilo.
 """
-from game.thrower import Thrower
+from game.Player import Player
 
 class Director:
     """A code template for a person who directs the game. The responsibility of 
