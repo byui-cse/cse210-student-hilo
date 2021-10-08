@@ -16,6 +16,7 @@ class Player:
         Args:
             Self(Player): An instance of Player.
         """
+        # Array to hold 2 card numbers.
         self.cards = []
     
     def get_card(self):
@@ -23,9 +24,10 @@ class Player:
         
         Args:
             Self(Player): An instance of Player."""
+        # random number between 1-13 is generated and added to the list.
         self.cards.append(random.randrange(1,14))
 
-
+    
     def get_guess(self):
         """Determines if the user can throw again. Returns True or False.
         Args:
@@ -33,6 +35,7 @@ class Player:
         """
         guess = input('Higher or lower? (h/l) ')
 
+        assert type(guess) == type('string')
         return guess
     
 
@@ -40,13 +43,16 @@ class Player:
         """Calculates the number of points for each turn. Returns an integer.
         Args:
             Self(Player): An instance of Player."""
-        if guess.lower() == 'h':
+
+        assert type(guess) == type('string')
+        # Points are returned according to user input
+        if guess == 'h':
             if self.cards[1] > self.cards[0]:
                 return 100
             else:
                 return (-75)
         
-        if guess.lower() == 'l':
+        if guess == 'l':
             if self.cards[1] < self.cards[0]:
                 return 100
             else:
@@ -56,8 +62,7 @@ class Player:
         """Clears the card list.
         Args:
             Self(Player): An instance of Player."""
+        
+        # Clears first item of the array.
         self.cards.pop(0)
-
-
-#hola
         
