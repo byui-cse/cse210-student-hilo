@@ -18,6 +18,7 @@ class Dealer:
     self.keep_playing = True
     self.score = 0
     self.player = Player()
+    self.string_guess = "h"
 
   def start_game(self):
     """Starts the game loop to control the sequence of play.
@@ -37,7 +38,7 @@ class Dealer:
     Args:
       self (Dealer): an instance of Dealer.
     """
-
+    self.player.draw_card()
 
   def do_updates(self):
     """Updates the important game information for each round of play. In 
@@ -46,7 +47,8 @@ class Dealer:
     Args:
       self (Dealer): an instance of Dealer.
     """
-
+    points = self.player.get_points()
+    self.score += points
 
   def do_outputs(self):
     """Outputs the important game information for each round of play. In 
@@ -55,4 +57,13 @@ class Dealer:
     Args:
       self (Dealer): an instance of Dealer.
     """
-
+    print(f"\nThe card is: {self.player.newcard}")
+    self.string_guess = input("Higher or lower? [h/l] ")
+    self.player.guess = True if self.choice == "h" else False
+    print(f"Next card was: {self.player.oldcard}")
+    print(f"Your score is: {self.score}")
+    if self.player.can_throw():
+      choice = input("Keep playing? [y/n] ")
+      self.keep_playing = (choice == "y")
+    else:
+      self.keep_playing = False
