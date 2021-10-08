@@ -35,4 +35,39 @@ root                    (project root folder)
 
 ## Authors
 ---
-* TODO: Add your names and emails here
+Blake Hollingsworth - hol20048@byui.edu
+
+## Project Planning
+# Dealer:
+from game.Guesser import Guesser
+
+__init__(self):
+self.keep_playing = True
+self.score = 300
+self.guesser = guesser()
+
+start_game(self):
+  displaying a card
+get_inputs(self):
+  keep playing? y/n
+do_updates(self):
+  +100 -75
+do_outputs(self):
+
+
+# Guesser:
+import Random
+__init__(self):
+self.card = random 1-13
+
+can_play(self):
+  boolean <0
+calculate_score(self):
+  takes the guess
+  compare
+  if 100 if -75
+get_input_high_Low(self):
+  guess the next card h/L
+
+
+
