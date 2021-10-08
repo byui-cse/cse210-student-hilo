@@ -20,6 +20,7 @@ class Player:
     Args:
       self (Player): an instance of Player.
     """
+    self.oldcard = self.newcard # Store old card value
     self.newcard = random.randint(1,14)
   def get_points(self):
     """Get points from player guess
