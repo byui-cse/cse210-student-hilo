@@ -42,7 +42,7 @@ class Director:
         Args:
             self (Director): An instance of Director.
         """
-        self.thrower.throw_dice()
+        self.player.throw_dice()
         
     def update_score(self):
         """Updates the important game information for each round of play. In 
@@ -56,7 +56,7 @@ class Director:
         
     def do_outputs(self):
         print(f"The card is{self.player.cards[0]}")
-        self.player.get_guess()
+        self.player.get_points()
         print(f"Next card was: {self.player.cards[1]}")
         print(f"Your score is: {self.score}")
         if self.score != 0:
