@@ -35,4 +35,7 @@ root                    (project root folder)
 
 ## Authors
 ---
-* TODO: Add your names and emails here
+* Christian Soldevilla -- sol17011@byui.edu
+* Jared Call ------------ cal03021@byui.edu
+* Jhan Chavez ----------- cha13074@byui.edu
+* Logan Herrmeyer ------- her20005@byu.edu
