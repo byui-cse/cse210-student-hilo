@@ -37,3 +37,4 @@ root                    (project root folder)
 ---
 * TODO: Add your names and emails here
 * fiveoat@gmail.com Coty Fivecoat
+* jafc120@gmail.com Jorge Flores
