@@ -37,3 +37,4 @@ root                    (project root folder)
 ---
 * TODO: Add your names and emails here
 1.- Isaac Cruz ----- cru21010@byui.edu
+2.- William Seaver --- Sea16016@byui.edu
