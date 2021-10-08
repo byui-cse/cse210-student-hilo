@@ -32,7 +32,7 @@ class Director:
         """
         while self.keep_playing:
             self.get_inputs()
-            self.do_updates()
+            self.update_score()
             self.do_outputs()
 
     def get_inputs(self):
@@ -42,7 +42,9 @@ class Director:
         Args:
             self (Director): An instance of Director.
         """
-        self.player.throw_dice()
+        self.player.get_card()
+        print('the card 8')
+
         
     def update_score(self):
         """Updates the important game information for each round of play. In 
@@ -51,7 +53,9 @@ class Director:
         Args:
             self (Director): An instance of Director.
         """
-        points = self.player.get_points()
+        guess = self.player.get_guess()
+        guess = self.player.get_card()        
+        points = self.player.get_points(guess)
         self.score += points
         
     def do_outputs(self):
