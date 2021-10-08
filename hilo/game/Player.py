@@ -14,43 +14,49 @@ class Player:
         """The class constructor.
 
         Args:
-            Self(Thrower): An instance of Thrower.
+            Self(Player): An instance of Player.
         """
-        self.dice = []
-        self.num_throws = 0
+        self.cards = []
     
-    def throw_dice(self):
-        """Represents the 5 dice the user will roll each turn. 
-        Will return 5 numbers which will be added to dice list."""
-
-        self.dice = []
+    def get_card(self):
+        """Draws card number
         
-        for num in range(0,5):
-            self.dice.append(random.randrange(1,7))
+        Args:
+            Self(Player): An instance of Player."""
+        self.cards.append(random.randrange(1,14))
 
-    def can_throw(self):
+
+    def get_guess(self):
         """Determines if the user can throw again. Returns True or False.
         Args:
             Self(Thrower): An instance of Thrower.
         """
-        if self.dice.count(5)>0 or self.dice.count(1)>0:
-            return True
-        else:
-            return False
+        guess = input('Higher or lower? (h/l) ')
+
+        return guess
     
 
     def get_points(self):
         """Calculates the number of points for each turn. Returns an integer.
         Args:
-            Self(Thrower): An instance of Thrower."""
-        if self.get_guess == 'h':
-            if self.get_guess > self.get_card:
+            Self(Player): An instance of Player."""
+        if self.get_guess.lower() == 'h':
+            if self.cards[1] > self.cards[0]:
                 return 100
             else:
                 return (-75)
         
-        if self.get_guess == 'l':
-            if self.get_guess < self.get_card:
+        if self.get_guess.lower() == 'l':
+            if self.cards[1] < self.cards[0]:
                 return 100
             else:
                 return (-75) 
+
+    def clear_list(self):
+        """Clears the card list.
+        Args:
+            Self(Player): An instance of Player."""
+        self.cards.pop(0)
+
+        
+        
