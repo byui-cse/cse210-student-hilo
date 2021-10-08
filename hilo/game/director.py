@@ -1,7 +1,7 @@
 from game.dealer import Dealer
 
 class Director:
-  """A code template for a person who directs the game. The responsibility of 
+    """A code template for a person who directs the game. The responsibility of 
     this class of objects is to keep track of the score and control the 
     sequence of play.
     
@@ -34,12 +34,12 @@ class Director:
 
     def get_inputs(self):
         """Gets the inputs at the beginning of each round of play. In this case,
-        that means throwing the dice.
+        that means drawing a card and asking for a guess.
 
         Args:
             self (Director): An instance of Director.
         """
-        self.dealer.get_card()
+        self.dealer.draw_card()
 
         
     def do_updates(self):
@@ -50,22 +50,20 @@ class Director:
             self (Director): An instance of Director.
         """
         points = self.dealer.get_points()
-        if points == 0:
-            self.score = 0
-        else:
-            self.score += points
+        self.score += points
         
     def do_outputs(self):
         """Outputs the important game information for each round of play. In 
-        this case, that means the dice that were rolled and the score.
+        this case, that means the second card drawn and the score.
 
         Args:
             self (Director): An instance of Director.
         """
-        print(f"\nYou rolled: {self.dealer.dice}")
+
+        print(f"The new card is: {self.dealer.new_card}")
         print(f"Your score is: {self.score}")
-        if self.dealer.can_throw():
-            choice = input("Roll again? [y/n] ")
+        if self.score > 0:
+            choice = input("Play again? [y/n] ")
             self.keep_playing = (choice == "y")
         else:
             self.keep_playing = False
