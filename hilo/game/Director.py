@@ -21,7 +21,7 @@ class Director:
             self (Director): an instance of Director.
         """
         self.keep_playing = True
-        self.score = 0
+        self.score = 300
         self.player = Player()
 
     def start_game(self):
@@ -44,21 +44,24 @@ class Director:
         """
         self.thrower.throw_dice()
         
-    def do_updates(self):
+    def update_score(self):
         """Updates the important game information for each round of play. In 
         this case, that means updating the score.
 
         Args:
             self (Director): An instance of Director.
         """
-        points = self.thrower.get_points()
+        points = self.player.get_points()
         self.score += points
         
     def do_outputs(self):
-        print(f"\nYou throwed the card : {self.player.card}")
+        print(f"The card is{self.player.cards[0]}")
+        self.player.get_guess()
+        print(f"Next card was: {self.player.cards[1]}")
         print(f"Your score is: {self.score}")
-        if self.player.can_throw():
-            choice = input("Play again? [y/n] ")
-            self.keep_playing = (choice == "y")
-        else:
-            self.keep_playing = False
+        if self.score != 0:
+            keep_playing = input("Keep playing? [y/n] ")
+            if keep_playing == "y":
+                return True
+            else:
+                return False
