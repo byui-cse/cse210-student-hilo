@@ -36,3 +36,7 @@ root                    (project root folder)
 ## Authors
 ---
 * Riley Stratton
+* David Raya
+* Benjamin Gutierrez
+* Xander Eck
+* Daniel De La Pena
