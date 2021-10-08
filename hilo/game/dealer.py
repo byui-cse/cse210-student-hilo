@@ -26,6 +26,9 @@ class Dealer:
         Args:
             self (Dealer): an instance of Dealer.
         '''
+        self.previous_card = self.new_card
+        self.new_card = random.randint(1,13)
+
 
 
     def compare_card(self, guess):
@@ -36,3 +39,15 @@ class Dealer:
             guess (str): player guess
         
         '''
+
+        if guess.lower() == 'h':
+            if self.previous_card < self.new_card:
+                return 100
+            elif self.previous_card >= self.new_card:
+                return -75
+        
+        elif guess.lower() == 'l':
+            if self.previous_card > self.new_card:
+                return 100
+            elif self.previous_card <= self.new_card:
+                return -75
