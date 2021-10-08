@@ -85,7 +85,7 @@ Instructions:
         print_yellow(f"\tLast Card: {self.dealer.last_card}")
         print_yellow(f"\tCurrent Card: {self.dealer.current_card}")
         print_yellow(f"\tRemaining Cards: {sorted(self.dealer.deck)}")
-        print_green(f"\tCurrent Points: {self.points}")
+        
         if len(self.dealer.deck) >= 2 and self.points > 0:
             print_reset()
             play_another_round = self.get_play_another_round()
