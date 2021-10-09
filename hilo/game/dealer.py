@@ -18,8 +18,9 @@ class Dealer:
     def get_points(self, current_card, next_card):
         """Ask the user for a guess (h or l), and calculates the total number of 
         points for the current throw. 
-        Args: 
+        Attributes:
             self (Dealer): An instance of Dealer.
+        Args:
             current_card: the atrtibute that represent the card
                           which the dealer is displaying in real time.
             next_card:  attribute that represent the card that the dealer
