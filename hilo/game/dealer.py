@@ -1,5 +1,6 @@
 import random
 
+
 class Dealer:
     """A code template for a person who throws the cards. The responsibility 
     of this class of objects is to get the initial deck, shuffle it, throw the 
@@ -10,36 +11,51 @@ class Dealer:
         deck (list): A list of all the cards of a deck, with all the four 
                     suits(Spades, Club, Hearts, Diamonds) ranging from 1
                     to 13 (Ace through the King).
-    """
-
-    def shuffle_deck(self):
-        """
-        This function suffle the initial deck.
-
-        Attributes: None
-        """
-        random.shuffle(self.deck)
-
-    def can_throw(self, score):
-        """Determines whether or not the Dealer can throw again according to 
-        the rules. 
+    """  
+    
+   
+    
+    def get_points(self, current_card, next_card):
+        """Ask the user for a guess (h or l), and calculates the total number of 
+        points for the current throw. 
         Args: 
             self (Dealer): An instance of Dealer.
+            current_card: the atrtibute that represent the card
+                          which the dealer is displaying in real time.
+            next_card:  attribute that represent the card that the dealer
+                        is going to display next.
         
         Returns:
-            boolean: True if the list of dice has at least a five, or a one, or 
-            the number of throws is zero; false if otherwise.
+            number: The total points for the current throw.
         """
-        if score > 0 and len(self.deck) > 0:
-            return True
-        else:
-            return False
-        #return (score > 0 and len(self.deck) > 0)
+        while True:
+            print(f"\nThe current card is: {current_card[0]}")
+            self.answer = input("Higher or lower? [h/l] ")
+            if self.answer.lower() == "h" or self.answer.lower() == "l":
+                break
+            else:
+                print("Please, enter a valid answer [h/l]")
 
-    
-    def throw_card(self):
-        """Pick a card from the bottom of the deck and returns it.
-        Args: 
-            self (Dealer): An instance of Dealer.
-        """
-        return self.deck.pop()
+        if self.answer.lower() == "h" and next_card[1] > current_card[1]:
+            print("You Won!")
+            return self.winning_hand_points
+            
+
+        elif self.answer.lower() == "h" and next_card[1] < current_card[1]:
+            print("You Lost!")
+            return -self.losing_hand_points
+            
+
+        elif self.answer.lower() == "l" and next_card[1] < current_card[1]:
+            print("You Won!")
+            return self.winning_hand_points
+        
+
+        elif self.answer.lower() == "l" and next_card[1] > current_card[1]:
+            print("You Lost!")
+            return -self.losing_hand_points
+            
+        else:
+            print("Draw!")
+            return int(0)
+            
