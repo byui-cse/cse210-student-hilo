@@ -1,0 +1,43 @@
+Classes:
+    Dealer
+        (Attributes)
+            score
+            player
+            keep_playing
+
+        (methods)
+            start_game
+            get_inputs
+            do_updates
+            do_outputs
+
+    Player
+        (Attributes)
+            old_card
+            new_card
+        (methods)
+            can_guess
+            get_points
+            sort_card
+
+
+
+################################################################################################
+
+def get_points(self,choice):
+    if new_card > old_card:
+        put = "h"
+    else:
+        put = "l"
+    return (choice == put)
+
+    
+def points(self,choice):
+    if choice == "y":
+        points = 100
+    else:
+        points = -75
+    return points
+
+
+
