@@ -58,12 +58,34 @@ class Dealer:
       self (Dealer): an instance of Dealer.
     """
     print(f"\nThe card is: {self.player.newcard}")
-    self.string_guess = input("Higher or lower? [h/l] ")
-    self.player.guess = True if self.choice == "h" else False
+    
+    choosing = 'yes'
+    
+    while choosing == 'yes':
+      self.string_guess = input("Higher or lower? [h/l] ")
+      #if self.player.guess = True
+      if self.string_guess == "h":
+        self.player.guess = True
+        choosing = 'no'
+      elif self.string_guess == "l":
+        self.player.guess = False
+        choosing = 'no'
+      else:
+        print('Invalid input')
+
     print(f"Next card was: {self.player.oldcard}")
     print(f"Your score is: {self.score}")
-    if self.player.can_play():
-      choice = input("Keep playing? [y/n] ")
-      self.keep_playing = (choice == "y")
-    else:
-      self.keep_playing = False
+    
+    play_more = 'maybe'
+    
+    while play_more == 'maybe':
+      if self.player.can_play():
+        choice = input("Keep playing? [y/n] ")
+        if choice == 'y':
+          self.keep_playing = (choice == "y")
+          play_more = 'no'
+        elif choice == 'n':
+          self.keep_playing = False
+          play_more = 'no'
+        else:
+          print('Invalid input')
