@@ -1,16 +1,28 @@
-from game.dealer import Dealer
+from .dealer import Dealer
+
 import random
 
 class Table:
 
     def __init__(self):
-        self.cards = random.randint(1-13)# this isn't correct, just thinking it through
-        self.count_guesses = 0
+        self.points = 300
+        self.currrent_guess = None
+    
 
-#we need a method  that is called 
-# it needs to decide if your score is 0 
-# it needs to add 100 if you quessed correctly
-# it needs to subtract 75 if you guessed wrong.
-    def get_points(self):
+    def get_guess(self):
+        guess = input("Higher or Lower? H/L ")
+        if guess not in ["H","h","L","l"]:
+            print("Choose H/L")
+            
+            return self.get_guess()
 
-        
+        self.current_guess = guess
+        return guess    
+
+    def calculate_points(self, last_card, first_card):
+        if self.current_guess in ["h","H"]:
+            return 100 if last_card > first_card else -75
+        else:    
+            return 100 if last_card <first_card else -75 # this is cool, but I dont know why it works found in reeses game
+
+
