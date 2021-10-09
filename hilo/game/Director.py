@@ -20,9 +20,11 @@ class Director:
         Args:
             self (Director): an instance of Director.
         """
+
         self.keep_playing = True
         self.score = 300
         self.player = Player()
+        self.number_of_plays = 0
 
     def start_game(self):
         """Starts the game loop to control the sequence of play.
@@ -32,7 +34,7 @@ class Director:
         """
         while self.keep_playing:
             self.get_inputs()
-            self.do_updates()
+            self.update_score()
             self.do_outputs()
 
     def get_inputs(self):
@@ -42,7 +44,10 @@ class Director:
         Args:
             self (Director): An instance of Director.
         """
-        self.player.throw_dice()
+        # Random number between 1-13 is generated and returned. 
+        self.player.get_card()
+        print(f'the card is {self.player.cards[0]}')
+
         
     def update_score(self):
         """Updates the important game information for each round of play. In 
@@ -51,17 +56,38 @@ class Director:
         Args:
             self (Director): An instance of Director.
         """
-        points = self.player.get_points()
+        # Gets input from user ('h'/'l')
+        guess = self.player.get_guess()
+        assert type(guess) == type('string')
+
+        # If this is the first turn, a second card needs to be drawed.
+        # If it is not, a second card does not need to be drawed as there 
+        # is already one in the list.
+        if self.number_of_plays == 0:
+            assert self.number_of_plays == 0 
+            self.player.get_card()  
+
+        # Points from 1 turn are saved in the points variable which are then 
+        # added/substracted to the total score.
+        points = self.player.get_points(guess)
+        assert type(points) == type(1)
+        
         self.score += points
         
     def do_outputs(self):
-        print(f"The card is{self.player.cards[0]}")
-        self.player.get_points()
+
         print(f"Next card was: {self.player.cards[1]}")
+ 
         print(f"Your score is: {self.score}")
+
+        # Based on game rules and user input, game loop will continue or get
+        # turned off. 
         if self.score != 0:
             keep_playing = input("Keep playing? [y/n] ")
             if keep_playing == "y":
-                return True
+                self.player.clear_list()
+                self.keep_playing = True
             else:
-                return False
+                self.keep_playing = False
+        else:
+            self.keep_playing = False
