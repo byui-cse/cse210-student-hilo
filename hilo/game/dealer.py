@@ -1,4 +1,8 @@
+"""
+The game package contains the classes for playing Hilo.
+"""
 import random
+
 
 class Dealer:
     """A code template for a person who throws the cards. The responsibility 
@@ -10,36 +14,37 @@ class Dealer:
         deck (list): A list of all the cards of a deck, with all the four 
                     suits(Spades, Club, Hearts, Diamonds) ranging from 1
                     to 13 (Ace through the King).
-    """
-
-    def shuffle_deck(self):
-        """
-        This function suffle the initial deck.
-
-        Attributes: None
-        """
-        random.shuffle(self.deck)
-
-    def can_throw(self, score):
-        """Determines whether or not the Dealer can throw again according to 
-        the rules. 
-        Args: 
+    """  
+    
+    def __init__(self):
+        """Class constructor. Declares and initializes instance attributes.
+        Attributes:
             self (Dealer): An instance of Dealer.
-        
-        Returns:
-            boolean: True if the list of dice has at least a five, or a one, or 
-            the number of throws is zero; false if otherwise.
+            self.initial_points: The initial points is 300. This is the point given to the player at the start of the game.
+            self.winning_hand_points: The winning hand points is 100. It is the point the player gets when he guess right or when he/she wins.
+            self.losing_hand_points: The losing hand points is 75. This a player loses when he/she loses in the game.
+            ranks: The cards ranging from 1 (Ace) to 13 (King).
+            suits: The four suits forming the deck (Spades, Clubs, Hearts, Diamonds)
         """
-        if score > 0 and len(self.deck) > 0:
-            return True
-        else:
-            return False
-        #return (score > 0 and len(self.deck) > 0)
+        self.initial_points = 300
+        self.winning_hand_points = 100
+        self.losing_hand_points = 75
+        
+        self.deck = []
+
+        ranks = ["Ace", "2", "3", "4", "5", "6", "7",
+                 "8", "9", "10", "Jack", "Queen", "King"]
+        suits = {"Spades": "\u2664", "Clubs": "\u2667",
+                  "Hearts": "\u2661", "Diamonds": "\u2662"}
+        value = 1
+        for rank in ranks:
+            for suit in suits:
+                self.deck.append([rank + " of " + suits[suit], value])
+            value = value + 1
+            
+
+   
 
     
-    def throw_card(self):
-        """Pick a card from the bottom of the deck and returns it.
-        Args: 
-            self (Dealer): An instance of Dealer.
-        """
-        return self.deck.pop()
+    
+        
