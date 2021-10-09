@@ -84,11 +84,24 @@ class Director:
         # turned off. 
         if self.score != 0:
             keep_playing = input("Keep playing? [y/n] ")
-            print("")
             if keep_playing == "y":
                 self.player.clear_list()
                 self.keep_playing = True
+                print ("")
             else:
+                print ("")
+                print (f"Your final score was: {self.score}")
+                if self.score > 300:
+                    print ("Great job, see you next time!")
+                elif self.score <= 300:
+                    print ("Better luck next time...")
                 self.keep_playing = False
+
         else:
+            print ("")
+            print (f"Your final score was: {self.score}")
+            if self.score > 300:
+                print ("Great job, see you next time!")
+            elif self.score <= 300:
+                print ("Better luck next time...")
             self.keep_playing = False
