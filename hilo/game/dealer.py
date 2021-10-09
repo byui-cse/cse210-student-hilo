@@ -12,7 +12,32 @@ class Dealer:
                     suits(Spades, Club, Hearts, Diamonds) ranging from 1
                     to 13 (Ace through the King).
     """  
-    
+    def __init__(self):
+        """Class constructor. Declares and initializes instance attributes.
+        Attributes:
+            self (Dealer): An instance of Dealer.
+            self.initial_points: The initial points is 300. This is the point given to the player at the start of the game.
+            self.winning_hand_points: The winning hand points is 100. It is the point the player gets when he guess right or when he/she wins.
+            self.losing_hand_points: The losing hand points is 75. This a player loses when he/she loses in the game.
+            ranks: The cards ranging from 1 (Ace) to 13 (King).
+            suits: The four suits forming the deck (Spades, Clubs, Hearts, Diamonds)
+        """
+        self.initial_points = 300
+        self.winning_hand_points = 100
+        self.losing_hand_points = 75
+        
+        self.deck = []
+
+        ranks = ["Ace", "2", "3", "4", "5", "6", "7",
+                 "8", "9", "10", "Jack", "Queen", "King"]
+        suits = {"Spades": "\u2664", "Clubs": "\u2667",
+                  "Hearts": "\u2661", "Diamonds": "\u2662"}
+        value = 1
+        for rank in ranks:
+            for suit in suits:
+                self.deck.append([rank + " of " + suits[suit], value])
+            value = value + 1
+            
    
     
     def get_points(self, current_card, next_card):
@@ -59,4 +84,3 @@ class Dealer:
         else:
             print("Draw!")
             return int(0)
-            
