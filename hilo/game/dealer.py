@@ -62,7 +62,7 @@ class Dealer:
     self.player.guess = True if self.choice == "h" else False
     print(f"Next card was: {self.player.oldcard}")
     print(f"Your score is: {self.score}")
-    if self.player.can_throw():
+    if self.player.can_play():
       choice = input("Keep playing? [y/n] ")
       self.keep_playing = (choice == "y")
     else:
