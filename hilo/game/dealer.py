@@ -18,12 +18,13 @@ class Dealer:
     
     def __init__(self):
         """Class constructor. Declares and initializes instance attributes.
-        Args:
+        Attributes:
             self (Dealer): An instance of Dealer.
-            Artributes: 
-            The initial points is 300. This is the point given to the player at the start of the game.
-            The winning hand points is 100. It is the point the player gets when he guess right or when he/she wins.
-            The losing hand points is 75. This a player loses when he/she loses in the game.
+            self.initial_points: The initial points is 300. This is the point given to the player at the start of the game.
+            self.winning_hand_points: The winning hand points is 100. It is the point the player gets when he guess right or when he/she wins.
+            self.losing_hand_points: The losing hand points is 75. This a player loses when he/she loses in the game.
+            ranks: The cards ranging from 1 (Ace) to 13 (King).
+            suits: The four suits forming the deck (Spades, Clubs, Hearts, Diamonds)
         """
         self.initial_points = 300
         self.winning_hand_points = 100
