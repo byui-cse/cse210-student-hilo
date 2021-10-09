@@ -35,7 +35,7 @@ root                    (project root folder)
 
 ## Authors
 ---
-* Riley Stratton: riley.s.stratton@outlook.com
+* Riley Stratton
 * David Raya
 * Benjamin Gutierrez
 * Xander Eck
