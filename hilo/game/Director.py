@@ -46,7 +46,7 @@ class Director:
         """
         # Random number between 1-13 is generated and returned. 
         self.player.get_card()
-        print(f'the card is {self.player.cards[0]}')
+        print(f'The current card is: {self.player.cards[0]}')
 
         
     def update_score(self):
@@ -76,7 +76,7 @@ class Director:
         
     def do_outputs(self):
 
-        print(f"Next card was: {self.player.cards[1]}")
+        print(f"The new card is: {self.player.cards[1]}")
  
         print(f"Your score is: {self.score}")
 
@@ -84,6 +84,7 @@ class Director:
         # turned off. 
         if self.score != 0:
             keep_playing = input("Keep playing? [y/n] ")
+            print("")
             if keep_playing == "y":
                 self.player.clear_list()
                 self.keep_playing = True

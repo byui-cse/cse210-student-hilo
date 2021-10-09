@@ -33,7 +33,7 @@ class Player:
         Args:
             Self(Thrower): An instance of Thrower.
         """
-        guess = input('Higher or lower? (h/l) ')
+        guess = input('Higher or lower? [h/l] ')
 
         assert type(guess) == type('string')
         return guess
