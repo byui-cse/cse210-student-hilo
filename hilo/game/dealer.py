@@ -57,10 +57,11 @@ class Dealer:
     Args:
       self (Dealer): an instance of Dealer.
     """
-    print(f"\nThe card is: {self.player.newcard}")
+    print(f"\nThe card is: {self.player.oldcard}")
     self.string_guess = input("Higher or lower? [h/l] ")
+    self.choice = self.string_guess
     self.player.guess = True if self.choice == "h" else False
-    print(f"Next card was: {self.player.oldcard}")
+    print(f"Next card was: {self.player.newcard}")
     print(f"Your score is: {self.score}")
     if self.player.can_play():
       choice = input("Keep playing? [y/n] ")

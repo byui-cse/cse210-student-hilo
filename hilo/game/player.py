@@ -21,19 +21,21 @@ class Player:
       self (Player): an instance of Player.
     """
     self.oldcard = self.newcard # Store old card value
-    self.newcard = random.randint(1,14)
+    self.newcard = random.randint(1,13)
   def get_points(self):
     """Get points from player guess
 
     Args:
       self (Player): an instance of Player.
     """
-    if(self.guess == True and (self.newcard - self.oldcard) > 0):
+    self.points = 0
+    if(self.guess == True and ((self.newcard - self.oldcard) >= 0)):
       self.points += 100
-    elif(self.guess == False and (self.newcard - self.oldcard) < 0):
+    elif(self.guess == False and ((self.newcard - self.oldcard) <= 0)):
       self.points += 100
     else:
       self.points -= 75
+    return self.points
   def can_play(self):
     """Can the player play (points > 0)?
 
