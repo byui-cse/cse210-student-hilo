@@ -28,16 +28,16 @@ class Player:
     Args:
       self (Player): an instance of Player.
     """
-    if(guess == True and (self.newcard - self.oldcard) > 0):
-      points += 100
-    elif(guess == False and (self.newcard - self.oldcard) < 0):
-      points += 100
+    if(self.guess == True and (self.newcard - self.oldcard) > 0):
+      self.points += 100
+    elif(self.guess == False and (self.newcard - self.oldcard) < 0):
+      self.points += 100
     else:
-      points -= 75
+      self.points -= 75
   def can_play(self):
     """Can the player play (points > 0)?
 
     Args:
       self (Player): an instance of Player.
     """
-    return ((points > 0) or self.is_done)
+    return ((self.points > 0) or self.is_done)
