@@ -36,3 +36,4 @@ root                    (project root folder)
 ## Authors
 ---
 * Nacho Ampuero
+* Okechukwu Prince
