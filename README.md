@@ -37,5 +37,6 @@ root                    (project root folder)
 ---
 Ronaldo Schmidt - ronaldomschmidt@gmail.com
 Jennifer Clark  Jennifer.c.schultz@gmail.com
+Elizabeth Tellez - tellezelizabethmf@gmail.com
 * TODO: Add your names and emails here
 
