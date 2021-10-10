@@ -41,14 +41,16 @@ class Director:
             self (Director): An instance of Director.
         """
         invalid_input = True
-
+        
+        self.dealer.draw_card()
+        print(f"\nThe current card is: {self.dealer.current_card}")
         while invalid_input:
-            self.dealer.draw_card()
-            print(f"The current card is: {self.dealer.current_card}")
-            self.highlow = input("Higher or lower? [h/l] ")
+            self.highlow = input("Higher or lower? [h/l]: ")
 
             if self.highlow.lower() == "h" or self.highlow.lower() == "l":
                 invalid_input = False
+            else:
+                print('\nInvalid input.\n')
 
         
     def do_updates(self):
@@ -69,11 +71,11 @@ class Director:
             self (Director): An instance of Director.
         """
 
-        print(f"The new card is: {self.dealer.new_card}")
+        print(f"\nThe new card is: {self.dealer.new_card}")
         print(f"Your score is: {self.score}")
         if self.score > 0:
-            choice = input("Play again? [y/n] ")
+            choice = input("\nPlay again? [y/n]: ")
             self.keep_playing = (choice == "y")
         else:
             self.keep_playing = False
-            print("Better luck next time!")
+            print("\nBetter luck next time!")

@@ -1,6 +1,6 @@
-# TODO: Add entry point code here
-
+#Import Director
 from game.director import Director
 
+#Run game
 director = Director()
 director.start_game()
