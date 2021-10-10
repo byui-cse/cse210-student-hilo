@@ -20,7 +20,7 @@ class Director:
         self.keep_playing = True
         self.score = 300
         self.dealer = Dealer()
-        self.highlow = "error"
+        self.highlow = None
 
     def start_game(self):
         """Starts the game loop to control the sequence of play.
@@ -40,9 +40,15 @@ class Director:
         Args:
             self (Director): An instance of Director.
         """
-        self.dealer.draw_card()
-        print(f"The current card is: {self.dealer.current_card}")
-        self.highlow = input("Higher or lower? [h/l] ")
+        invalid_input = True
+
+        while invalid_input:
+            self.dealer.draw_card()
+            print(f"The current card is: {self.dealer.current_card}")
+            self.highlow = input("Higher or lower? [h/l] ")
+
+            if self.highlow.lower() == "h" or self.highlow.lower() == "l":
+                invalid_input = False
 
         
     def do_updates(self):

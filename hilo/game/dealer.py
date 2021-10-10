@@ -31,19 +31,16 @@ class Dealer:
         """
         points = 0
 
-        if highlow == "h":
+        if highlow.lower() == "h":
             if self.new_card > self.current_card:
                 points = 100
             else:
                 points = -75
-        elif highlow == "l":
+        elif highlow.lower() == "l":
             if self.new_card < self.current_card:
                 points = 100
             else:
                 points = -75
-        else:
-            print(f"Invalid input.")
-            points = -75
         
         return points
 
@@ -54,7 +51,7 @@ class Dealer:
             self (Dealer): An instance of Dealer.
         """
         numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
-
+        
         if self.current_card == 0:
             self.current_card = random.choice(numbers)
         else:
