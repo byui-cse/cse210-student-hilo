@@ -21,6 +21,7 @@ class Player:
     Args:
       self (Player): an instance of Player.
     """
+    print("draw_card called!!!")
     self.oldcard = self.newcard # Store old card value
     self.newcard = random.randint(1,13)
   def get_points(self):

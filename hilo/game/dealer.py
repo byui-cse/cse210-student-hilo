@@ -16,7 +16,8 @@ class Dealer:
       self (Dealer): an instance of Dealer.
     """
     self.keep_playing = True
-    self.score = 0
+    self.score = 300
+    # Score starts at 300
     self.player = Player()
     self.string_guess = "h"
 
@@ -39,6 +40,19 @@ class Dealer:
       self (Dealer): an instance of Dealer.
     """
     self.player.draw_card()
+    # We need to draw a new card before anything else
+    print(f"\nThe card is: {self.player.oldcard}")
+    choosing = 'yes'
+    
+    while choosing == 'yes':
+      self.guess = input("Higher or lower? [h/l] ")
+      if self.guess == 'h' or self.guess == 'l':
+        self.choice = self.string_guess
+        self.player.guess = True if self.choice == "h" else False
+        choosing = 'no'
+      else:
+        print('Invalid input')
+    # These inputs need to be done before drawing a new card
 
   def do_updates(self):
     """Updates the important game information for each round of play. In 
@@ -69,18 +83,6 @@ class Dealer:
       else:
         print('Invalid input')
     """
-
-    print(f"\nThe card is: {self.player.oldcard}")
-    choosing = 'yes'
-    
-    while choosing == 'yes':
-      self.guess = input("Higher or lower? [h/l] ")
-      if self.guess == 'h' or self.guess == 'l':
-        self.choice = self.string_guess
-        self.player.guess = True if self.choice == "h" else False
-        choosing = 'no'
-      else:
-        print('Invalid input')
     print(f"Next card was: {self.player.newcard}")
     print(f"Your score is: {self.score}")
     if self.player.can_play():
