@@ -53,9 +53,5 @@ class Guesser:
                 return True
             else:
                 return False
-
-    def get_points(self):
     
-
-    def can_guess(self):
 
