@@ -2,4 +2,5 @@
 
 from game.director import Director
 
-Director.start_game()
+director = Director()
+director.start_game()
