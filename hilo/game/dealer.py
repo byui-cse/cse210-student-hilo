@@ -17,8 +17,8 @@ class Dealer:
             self (Dealer): An instance of Dealer.
         """
         self.num_draws = 0
-        self.new_card = 0
         self.current_card = 0
+        self.new_card = 0
     
     def get_points(self, highlow):
         """Gets the total number of points earned from a guess.
@@ -51,11 +51,9 @@ class Dealer:
             self (Dealer): An instance of Dealer.
         """
         numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
-
-        if self.num_draws == 0:
+        
+        if self.current_card == 0:
             self.current_card = random.choice(numbers)
         else:
             self.current_card = self.new_card
-        self.new_card = random.choice(numbers)
-
-        self.num_draws += 1
+            self.new_card = random.choice(numbers)
