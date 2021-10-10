@@ -20,37 +20,40 @@ class Dealer:
         self.new_card = 0
         self.current_card = 0
     
-    def get_points(self):
-        """Gets the total number of points earned from a draw.
+    def get_points(self, highlow):
+        """Gets the total number of points earned from a guess.
 
         Args:
             self (Dealer): An instance of Dealer.
-            rolled_numbers (list): The list containing the numbers of the dice.
+            highlow (string): The user's choice of higher or lower
         Return:
             Integer
         """
         points = 0
 
-        for die in self.dice:
-            if die == 1:
-                points += 100
-            elif die == 5:
-                points += 50
+        if highlow == "h":
+            if self.new_card > self.current_card:
+                points = 100
             else:
-                points += 0
+                points = -75
+        elif highlow == "l":
+            if self.new_card < self.current_card:
+                points = 100
+            else:
+                points = -75
+        else:
+            print(f"Invalid input.")
+            points = -75
         
         return points
 
     def draw_card(self):
-        """Displays current card, gets guess from the user, gets a random number between 1 and 13
-        for the new card.
+        """Draws two random cards, each with a value in the range of 1-13.
         
         Args:
             self (Dealer): An instance of Dealer.
         """
-        numbers = [1, 2, 3, 4, 5, 6]
-        self.dice = []
-        self.num_throws += 1
+        numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
 
-        for _ in range(5):
-            self.dice.append(random.choice(numbers))
+        self.new_card = random.choice(numbers)
+        self.current_card = random.choice(numbers)
