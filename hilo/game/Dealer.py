@@ -1,3 +1,4 @@
+import Guesser
 class Dealer:
     """The person who deals the cards and directs the game. Keeps track of the total score.
     
