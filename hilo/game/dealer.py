@@ -38,12 +38,7 @@ class Dealer:
     Args:
       self (Dealer): an instance of Dealer.
     """
-    # The input needs to be before the scoring
     self.player.draw_card()
-    print(f"\nThe card is: {self.player.oldcard}")
-    self.string_guess = input("Higher or lower? [h/l] ")
-    self.choice = self.string_guess
-    self.player.guess = True if self.choice == "h" else False
 
   def do_updates(self):
     """Updates the important game information for each round of play. In 
@@ -62,10 +57,43 @@ class Dealer:
     Args:
       self (Dealer): an instance of Dealer.
     """
+
+    """
+    choosing = 'yes'
+    
+    while choosing == 'yes':
+      self.guess = input("Higher or lower? [h/l] ")
+      if self.guess == "h" or self.guess == "l":
+        self.do_updates()
+        choosing = 'no'
+      else:
+        print('Invalid input')
+    """
+
+    print(f"\nThe card is: {self.player.oldcard}")
+    choosing = 'yes'
+    
+    while choosing == 'yes':
+      self.guess = input("Higher or lower? [h/l] ")
+      if self.guess == 'h' or self.guess == 'l':
+        self.choice = self.string_guess
+        self.player.guess = True if self.choice == "h" else False
+        choosing = 'no'
+      else:
+        print('Invalid input')
     print(f"Next card was: {self.player.newcard}")
     print(f"Your score is: {self.score}")
     if self.player.can_play():
-      choice = input("Keep playing? [y/n] ")
-      self.keep_playing = (choice == "y")
+      play_more = 'maybe'
+      while play_more == 'maybe':
+        choice = input("Keep playing? [y/n] ")
+        if choice == 'y':
+          self.keep_playing = (choice == "y")
+          play_more = 'no'
+        elif choice == 'n':
+          self.keep_playing = False
+          play_more = 'no'
+        else:
+          print('Invalid input')
     else:
       self.keep_playing = False
