@@ -9,7 +9,7 @@ class Player:
     def generate_cards(self):
         # Populates `self.card_set` with 7 new cards
         for i in range(7):
-            card = random.randint(1, 13)
+            card = random.randint(10, 13)
             self.card_set.append(card)
 
         # In case of wanting to cheat, uncomment that below
@@ -18,7 +18,8 @@ class Player:
     def calculate_points(self, choice):
 
         # Add points
-        if (choice == "h" and self.card_set[1] >= self.card_set[0]) or (choice == "l" and self.card_set[1] <= self.card_set[0]): 
+        # Gives freeby points if the next card is the same as the previous
+        if (choice == "h" and self.card_set[1] >= self.card_set[0]) or (choice == "l" and self.card_set[1] <= self.card_set[0]):
             self.points += 100
 
         # Subtract points
