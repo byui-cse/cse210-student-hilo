@@ -36,3 +36,5 @@ root                    (project root folder)
 ## Authors
 ---
 * TODO: Add your names and emails here
+Chance Schneider - schneider.chance@gmail.com
+Victor D. Gauna - victor.gauna@outlook.com
