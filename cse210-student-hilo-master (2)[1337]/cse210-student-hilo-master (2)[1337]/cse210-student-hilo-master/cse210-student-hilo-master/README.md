@@ -35,4 +35,7 @@ root                    (project root folder)
 
 ## Authors
 ---
-* TODO: Benjamin Welsch bwelsch@byui.edu
+Ronaldo Schmidt - ronaldomschmidt@gmail.com
+Jennifer Clark  Jennifer.c.schultz@gmail.com
+* TODO: Add your names and emails here
+
