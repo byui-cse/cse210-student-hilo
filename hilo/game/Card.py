@@ -4,7 +4,9 @@ class Card:
     """This is everything we should need fo rhte card decision.
     The random card that is chosen, the number of turns, and High/Low
     choice consequences."""
-
+    def __init__(self):
+        self.card_number1 = 0
+        self.card_number2 = 0
 
     def card(self):
         """Card will choose a random number from 1-13. The numbers
@@ -16,9 +18,9 @@ class Card:
         """If player chooses High and gets it right we add 100 points
         But if they get it wrong they lose 75 points"""
         if self.card_number2 > self.card_number1:
-            return self.point_total + 100
+            return +100
         elif self.card_number2 < self.card_number1:
-            return self.point_total - 75
+            return -75
 
 
     def low(self):

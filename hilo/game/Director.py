@@ -4,14 +4,15 @@ class Director:
 
     def __init__(self):
         self.card = Card()
-        self.another+""
+        self.another = ""
         # self.Q = self.question(self)
-        self.chioce = ""
+        self.choice = ""
         self.score = 0
         self.keep_playing = True
+        self.points = 0
         # self.random_card1 = self.card_draw(self)
         # self.random_card2 = self.card_draw(self)
-    
+        
     def start_playing(self):
         """Gets things going and will be cycled through every time they choose to play another round"""
         while self.keep_playing:
@@ -26,16 +27,17 @@ class Director:
     def do_updates(self):
         """Checks the guess of the player by reaching into Card.py and gives or takes poins accordingly."""
         if self.choice == "low":
-            self.points += self.card.low(self)
+            self.points = self.card.low()
+            
 
         elif self.choice == "high":
-            self.points += self.card.high(self)
+            self.points = self.card.high()
 
     def do_outputs(self):
         """Outputs the important game information for each round of play. it shows the player
         their first card and shows them their score. it then asks them if they would like another card
         if yes, it gets their guess and startes everything over. 
-        if no, it stopps the game.
+        if no, it stopps the game. 
         """
         print(f"\nYour new card is: {self.card.card_number2}")
         print(f"Your score is: {self.score}")
