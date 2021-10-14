@@ -5,16 +5,11 @@ class Card:
     The random card that is chosen, the number of turns, and High/Low
     choice consequences."""
 
-    def __init__(self):
-        """Mostly a collection of variables"""
-        self.card_number1 = 0
-        self.num_turns = 0
-        self.card_number2 = 0
-        self.point_total = 0
+
     def card(self):
         """Card will choose a random number from 1-13. The numbers
         represent a card."""
-        self.card_number = random.randint(1, 13)
+        self.card_number1 = random.randint(1, 13)
         self.num_turns += 1
     
     def high(self):
@@ -33,5 +28,7 @@ class Card:
             return self.point_total + 100
         elif self.card_number2 > self.card_number1:
             return self.point_total - 75
+
+    
 
 
