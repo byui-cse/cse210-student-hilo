@@ -85,6 +85,4 @@ class Dealer:
         if self.player.again == "n":
             print(f"Final score is {self.score}")
             self.keep_playing = False
-        
-    def can(self):
-        self.score=false
+ 
